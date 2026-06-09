@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FIT｜納得導線支援システム｜建てれば、売れた時代は、終わった。</title>
+<meta name="description" content="新築依存・比較市場化・コンプラ強化。住宅事業者が「選ばれ続ける」ための納得導線支援システム FIT。中立FP×品質監督×コンプラ設計を一体提供。ビビビビ株式会社。" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Crimson+Pro:wght@400;500;600&family=Noto+Serif+JP:wght@500;700;900&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Hallmark · macrostructure: Manifesto · tone: BtoB crisis polemic · anchor hue: brick-red (28°)
+ * theme: Newsprint (light paper · roman-serif display · warm hue)
+ * genre: editorial · enrichment: section-bleed photographs (monochrome treatment)
+ * nav: N6 Masthead · footer: Ft4 Dense colophon
+ */
+
+:root {
+  /* Newsprint palette */
+  --color-paper:     oklch(92%  0.045 50);
+  --color-paper-2:   oklch(89%  0.050 50);
+  --color-paper-3:   oklch(84%  0.054 45);
+  --color-rule:      oklch(68%  0.030 40);
+  --color-rule-2:    oklch(35%  0.020 35);
+  --color-muted:     oklch(46%  0.022 35);
+  --color-neutral:   oklch(30%  0.025 30);
+  --color-ink-2:     oklch(20%  0.030 28);
+  --color-ink:       oklch(15%  0.030 25);
+  --color-accent:    oklch(32%  0.10  28);
+  --color-accent-ink:oklch(45%  0.13  30);
+  --color-focus:     oklch(48%  0.18  30);
+  --color-paper-bleed:oklch(11% 0.020 28);
+
+  /* Typography — Newsprint serif primary, Noto Serif JP for Japanese */
+  --font-display: "Playfair Display", "Noto Serif JP", ui-serif, Georgia, serif;
+  --font-body:    "Crimson Pro", "Noto Serif JP", ui-serif, Georgia, serif;
+  --font-label:   "Inter", "Noto Sans JP", ui-sans-serif, sans-serif;
+
+  /* Type scale */
+  --text-base: 1.0625rem;
+  --text-md:   1.1875rem;
+  --text-lg:   1.375rem;
+  --text-xl:   1.625rem;
+  --text-2xl:  2rem;
+  --text-3xl:  2.5rem;
+  --text-display-s: clamp(2.25rem, 4vw + 0.8rem, 3.75rem);
+  --text-display:   clamp(2.75rem, 5.2vw + 1rem, 5.5rem);
+  --text-display-xl:clamp(3.25rem, 7vw + 1rem, 7rem);
+
+  /* Spacing — 4pt scale */
+  --space-2xs: 4px;
+  --space-xs:  8px;
+  --space-sm:  16px;
+  --space-md:  24px;
+  --space-lg:  40px;
+  --space-xl:  64px;
+  --space-2xl: 96px;
+  --space-3xl: 144px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(.2,.7,.2,1);
+  --ease-in:  cubic-bezier(.4,0,.7,.2);
+  --dur-1: 180ms;
+  --dur-2: 360ms;
+  --dur-3: 720ms;
+
+  /* Rules */
+  --rule-1: 1px solid var(--color-rule);
+  --rule-2: 2px solid var(--color-rule-2);
+  --rule-double: 1px solid var(--color-rule-2);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow-x: clip; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  /* Japanese kinsoku — prevent orphan punctuation */
+  word-break: keep-all;
+  line-break: strict;
+  text-wrap: pretty;
+  font-feature-settings: "palt" 1;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+::selection { background: var(--color-ink); color: var(--color-paper); }
+
+:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+
+.container { max-width: 1240px; margin: 0 auto; padding: 0 var(--space-md); }
+.measure { max-width: 64ch; }
+.measure-wide { max-width: 76ch; }
+
+/* === MASTHEAD (N6) === */
+.masthead {
+  border-bottom: var(--rule-double);
+  border-top: 4px solid var(--color-ink);
+  background: var(--color-paper);
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(8px);
+  background: color-mix(in srgb, var(--color-paper) 92%, transparent);
+}
+.masthead-inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-md);
+  padding: 14px var(--space-md);
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.masthead-mark {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+}
+.masthead-mark em { font-style: normal; color: var(--color-accent); }
+.masthead-meta {
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  font-weight: 600;
+  text-align: center;
+}
+.masthead-cta {
+  font-family: var(--font-label);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  padding: 12px 22px;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  transition: background var(--dur-1) var(--ease-out);
+}
+.masthead-cta:hover { background: var(--color-accent); }
+.masthead-vvvv {
+  height: 28px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+@media (max-width: 720px) {
+  .masthead-meta { display: none; }
+  .masthead-inner { grid-template-columns: auto auto; padding: 12px var(--space-sm); }
+  .masthead-vvvv { display: none; }
+}
+
+/* === BLEED SECTIONS === */
+.bleed-ink {
+  background: var(--color-paper-bleed);
+  color: var(--color-paper);
+}
+.bleed-ink ::selection { background: var(--color-paper); color: var(--color-ink); }
+.bleed-accent {
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
+.bleed-paper-2 { background: var(--color-paper-2); }
+.bleed-paper-3 { background: var(--color-paper-3); }
+
+/* === HERO MANIFESTO === */
+.hero {
+  padding: clamp(64px, 9vw, 144px) 0 clamp(64px, 8vw, 120px);
+  position: relative;
+}
+.hero-eyebrow {
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  letter-spacing: 0.4em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-paper);
+  opacity: 0.55;
+  margin-bottom: var(--space-lg);
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--text-display-xl);
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+  color: var(--color-paper);
+  margin-bottom: var(--space-lg);
+  max-width: 16ch;
+  overflow-wrap: anywhere;
+  min-width: 0;
+  /* tilt only on large screens; flat on mobile to preserve readability */
+}
+@media (min-width: 900px) {
+  .hero h1 { transform: rotate(-1.8deg); transform-origin: left center; }
+}
+.hero h1 .accent-block {
+  display: inline;
+  background: var(--color-accent);
+  padding: 0 0.12em;
+  margin: 0 0.04em;
+  color: var(--color-paper);
+  font-style: normal;
+}
+.hero h1 .struck {
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--color-accent) 80%, transparent);
+  text-decoration-thickness: 6px;
+  color: color-mix(in srgb, var(--color-paper) 50%, transparent);
+}
+.hero-lead {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  line-height: 1.85;
+  color: color-mix(in srgb, var(--color-paper) 75%, transparent);
+  max-width: 38em;
+  margin-bottom: var(--space-xl);
+  font-weight: 500;
+}
+.hero-byline {
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-paper) 50%, transparent);
+  font-weight: 600;
+  border-top: 1px solid color-mix(in srgb, var(--color-paper) 30%, transparent);
+  padding-top: var(--space-md);
+  display: inline-block;
+}
+
+/* === MARQUEE BAND (信条) === */
+.belief-band {
+  border-top: var(--rule-2);
+  border-bottom: var(--rule-2);
+  padding: var(--space-md) 0;
+  overflow: hidden;
+  background: var(--color-paper);
+}
+.belief-track {
+  display: flex;
+  gap: var(--space-2xl);
+  white-space: nowrap;
+  animation: scroll 42s linear infinite;
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.5vw, 1.6rem);
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.04em;
+}
+.belief-track span { font-style: normal; }
+.belief-track span.sep { color: var(--color-muted); }
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .belief-track { animation: none; justify-content: center; }
+}
+
+/* === CLAIMS (manifesto paragraphs) === */
+.section {
+  padding: clamp(80px, 10vw, 144px) 0;
+}
+.section-meta {
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-md);
+}
+.section-meta-light { color: color-mix(in srgb, var(--color-paper) 70%, transparent); }
+.claim-block {
+  border-top: var(--rule-double);
+  padding-top: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+.claim-block:first-of-type { margin-top: 0; }
+.claim-number {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+}
+.claim-head {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--text-display-s);
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+  margin-bottom: var(--space-md);
+  overflow-wrap: anywhere;
+  min-width: 0;
+  color: var(--color-ink);
+}
+.bleed-ink .claim-head { color: var(--color-paper); }
+.claim-body {
+  font-size: var(--text-md);
+  line-height: 1.95;
+  max-width: 50ch;
+  color: var(--color-ink-2);
+}
+.bleed-ink .claim-body { color: color-mix(in srgb, var(--color-paper) 80%, transparent); }
+.claim-body strong { color: var(--color-accent); font-weight: 700; }
+.bleed-ink .claim-body strong { color: var(--color-paper); }
+
+.section-pretitle {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2rem, 3.6vw, 3.4rem);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-lg);
+  max-width: 22ch;
+}
+.section-pretitle em {
+  font-style: normal;
+  background: var(--color-accent);
+  color: var(--color-paper);
+  padding: 0 0.1em;
+}
+.section-intro {
+  font-size: var(--text-md);
+  line-height: 1.95;
+  max-width: 50ch;
+  color: var(--color-ink-2);
+  margin-bottom: var(--space-xl);
+}
+.bleed-ink .section-intro { color: color-mix(in srgb, var(--color-paper) 80%, transparent); }
+
+/* === FULL BLEED IMAGE === */
+.full-bleed-image {
+  position: relative;
+  overflow: hidden;
+  border-top: var(--rule-2);
+  border-bottom: var(--rule-2);
+}
+.full-bleed-image img {
+  width: 100%;
+  height: clamp(280px, 50vw, 580px);
+  object-fit: cover;
+  filter: grayscale(80%) contrast(1.05) brightness(0.95);
+  transition: filter var(--dur-3) var(--ease-out);
+}
+.full-bleed-image::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 0%, transparent 70%, color-mix(in srgb, var(--color-paper-bleed) 30%, transparent) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+.full-bleed-image .caption {
+  position: absolute;
+  bottom: var(--space-md);
+  left: var(--space-md);
+  right: var(--space-md);
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-paper);
+  font-weight: 600;
+  z-index: 2;
+}
+.full-bleed-image .caption::before {
+  content: "—— ";
+  opacity: 0.55;
+}
+
+/* === FIT mark === */
+.fit-mark-block {
+  text-align: center;
+  padding: var(--space-3xl) 0 var(--space-2xl);
+  border-top: var(--rule-2);
+  border-bottom: var(--rule-double);
+}
+.fit-mark {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(7rem, 18vw, 16rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--color-accent);
+  display: inline-block;
+  position: relative;
+}
+.fit-mark::after {
+  content: "FIT";
+  position: absolute;
+  top: 6px; left: 6px;
+  color: transparent;
+  -webkit-text-stroke: 1px color-mix(in srgb, var(--color-ink) 18%, transparent);
+  z-index: -1;
+}
+.fit-tagline {
+  font-family: var(--font-label);
+  font-size: 0.8rem;
+  letter-spacing: 0.55em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-top: var(--space-md);
+  font-weight: 600;
+}
+.fit-jp {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  margin-top: var(--space-md);
+  letter-spacing: 0.04em;
+  color: var(--color-ink);
+}
+
+/* === PILLARS === */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-top: var(--rule-2);
+  border-bottom: var(--rule-2);
+}
+.pillar {
+  padding: var(--space-xl) var(--space-lg);
+  border-right: var(--rule-1);
+  position: relative;
+}
+.pillar:last-child { border-right: none; }
+.pillar-letter {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 4.5rem;
+  line-height: 1;
+  color: var(--color-accent);
+  margin-bottom: var(--space-md);
+}
+.pillar-label {
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-muted);
+  margin-bottom: var(--space-sm);
+}
+.pillar-head {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.55rem;
+  line-height: 1.4;
+  margin-bottom: var(--space-md);
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.pillar-body {
+  font-size: 1.02rem;
+  line-height: 1.85;
+  color: var(--color-ink-2);
+}
+@media (max-width: 820px) {
+  .pillars { grid-template-columns: 1fr; }
+  .pillar { border-right: none; border-bottom: var(--rule-1); }
+  .pillar:last-child { border-bottom: none; }
+}
+
+/* === COMPARE TABLE === */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: var(--rule-2);
+  border-bottom: var(--rule-2);
+}
+.compare-col {
+  padding: var(--space-xl) var(--space-lg);
+  border-right: var(--rule-1);
+}
+.compare-col:last-child {
+  border-right: none;
+  background: var(--color-paper-2);
+}
+.compare-tag {
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  color: var(--color-muted);
+}
+.compare-col:last-child .compare-tag { color: var(--color-accent); }
+.compare-head {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.6rem;
+  line-height: 1.45;
+  margin-bottom: var(--space-lg);
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.compare-col:first-child .compare-head { color: var(--color-muted); }
+.compare-list { list-style: none; }
+.compare-list li {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px dashed var(--color-rule);
+  font-size: 1.02rem;
+  line-height: 1.85;
+  display: flex;
+  gap: var(--space-sm);
+}
+.compare-list li:last-child { border-bottom: none; }
+.compare-list .mark {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.1em;
+  flex-shrink: 0;
+  width: 1.2em;
+}
+.compare-col:first-child .mark { color: var(--color-accent); }
+.compare-col:last-child .mark { color: var(--color-accent); }
+@media (max-width: 760px) {
+  .compare-grid { grid-template-columns: 1fr; }
+  .compare-col { border-right: none; border-bottom: var(--rule-1); }
+}
+
+/* === OUTCOMES / CHECKS — manifesto list === */
+.statement-list {
+  margin-top: var(--space-xl);
+  border-top: var(--rule-double);
+}
+.statement-item {
+  padding: var(--space-lg) 0;
+  border-bottom: var(--rule-double);
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--space-lg);
+  align-items: baseline;
+}
+.statement-num {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.4rem;
+  color: var(--color-accent);
+}
+.statement-head {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.55rem;
+  line-height: 1.5;
+  margin-bottom: var(--space-sm);
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.statement-body {
+  font-size: 1.05rem;
+  line-height: 1.95;
+  color: var(--color-ink-2);
+  max-width: 56ch;
+}
+@media (max-width: 640px) {
+  .statement-item { grid-template-columns: 1fr; gap: var(--space-sm); }
+}
+
+/* === CHECK LIST (誰のための問いか) === */
+.check-grid {
+  margin-top: var(--space-xl);
+  border-top: var(--rule-double);
+}
+.check-row {
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-rule);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-md);
+  align-items: baseline;
+}
+.check-mark {
+  font-family: var(--font-display);
+  font-weight: 900;
+  color: var(--color-accent);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+.check-row p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-ink);
+}
+
+/* === CTA — manifesto oversized block === */
+.cta-manifesto {
+  padding: clamp(80px, 10vw, 160px) 0 clamp(80px, 10vw, 160px);
+  border-top: var(--rule-2);
+  border-bottom: var(--rule-2);
+  position: relative;
+  overflow: hidden;
+}
+.cta-manifesto h2 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--text-display);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--color-paper);
+  margin-bottom: var(--space-lg);
+  max-width: 20ch;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.cta-manifesto h2 em {
+  font-style: normal;
+  background: var(--color-accent);
+  color: var(--color-paper);
+  padding: 0 0.12em;
+}
+.cta-manifesto-body {
+  font-size: var(--text-md);
+  line-height: 1.85;
+  color: color-mix(in srgb, var(--color-paper) 75%, transparent);
+  max-width: 44em;
+  margin-bottom: var(--space-xl);
+}
+.cta-manifesto-body strong { color: var(--color-paper); font-weight: 600; }
+.btn-block {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-md);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-label);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 28px 48px;
+  font-size: 1.05rem;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--dur-1) var(--ease-out), background var(--dur-1) var(--ease-out);
+}
+.btn-block:hover { background: var(--color-accent); color: var(--color-paper); transform: translateY(-2px); }
+.btn-block .arrow { font-family: var(--font-display); font-weight: 900; font-size: 1.4em; line-height: 1; }
+.btn-link {
+  display: inline-block;
+  margin-left: var(--space-lg);
+  font-family: var(--font-label);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--color-paper) 80%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-paper) 40%, transparent);
+  padding-bottom: 4px;
+}
+.btn-link:hover { color: var(--color-paper); border-color: var(--color-paper); }
+@media (max-width: 640px) {
+  .btn-link { display: block; margin-left: 0; margin-top: var(--space-md); }
+}
+
+.cta-vvvv {
+  margin-top: var(--space-3xl);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  border-top: 1px solid color-mix(in srgb, var(--color-paper) 30%, transparent);
+  padding-top: var(--space-lg);
+}
+.cta-vvvv img { height: 56px; opacity: 0.95; }
+.cta-vvvv .by {
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-paper) 50%, transparent);
+  font-weight: 700;
+}
+
+/* === FORM === */
+.form-wrap {
+  padding: clamp(64px, 8vw, 120px) 0;
+}
+.form-card {
+  max-width: 680px;
+  margin: 0 auto;
+  background: var(--color-paper);
+  border: var(--rule-2);
+  padding: clamp(40px, 5vw, 72px);
+  position: relative;
+}
+.form-card::before {
+  content: "";
+  position: absolute;
+  top: -2px; left: -2px;
+  width: 80px; height: 8px;
+  background: var(--color-accent);
+}
+.form-eyebrow {
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+}
+.form-card h3 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 1.4;
+  margin-bottom: var(--space-md);
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.form-card .sub {
+  font-size: 1.02rem;
+  color: var(--color-ink-2);
+  margin-bottom: var(--space-xl);
+  line-height: 1.85;
+}
+.form-row { margin-bottom: var(--space-md); }
+.form-row label {
+  display: block;
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+.form-row label .req {
+  color: var(--color-accent);
+  margin-left: 4px;
+}
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  background: var(--color-paper);
+  border: none;
+  border-bottom: var(--rule-1);
+  color: var(--color-ink);
+  padding: 12px 0;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: border-color var(--dur-1) var(--ease-out);
+}
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-bottom-color: var(--color-accent);
+}
+.form-row textarea {
+  resize: vertical;
+  min-height: 100px;
+  border: var(--rule-1);
+  padding: 14px;
+}
+.form-submit {
+  width: 100%;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  border: none;
+  padding: 22px;
+  font-family: var(--font-label);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  cursor: pointer;
+  margin-top: var(--space-lg);
+  transition: background var(--dur-1) var(--ease-out);
+}
+.form-submit:hover { background: var(--color-accent); }
+
+/* === FOOTER Ft4 Dense colophon === */
+footer {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  padding: var(--space-xl) 0 var(--space-lg);
+  border-top: 4px solid var(--color-accent);
+}
+.foot-grid {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+.foot-col h4 {
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--color-paper) 50%, transparent);
+  margin-bottom: var(--space-md);
+}
+.foot-col p, .foot-col li {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: color-mix(in srgb, var(--color-paper) 80%, transparent);
+}
+.foot-col ul { list-style: none; }
+.foot-col a:hover { color: var(--color-accent-ink); }
+.foot-brand {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: var(--color-paper);
+  margin-bottom: var(--space-sm);
+}
+.foot-brand em { color: var(--color-accent-ink); font-style: normal; }
+.foot-vvvv {
+  margin-top: var(--space-md);
+  height: 40px;
+  width: auto;
+  opacity: 0.9;
+}
+.foot-meta {
+  border-top: 1px solid color-mix(in srgb, var(--color-paper) 20%, transparent);
+  padding-top: var(--space-md);
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: color-mix(in srgb, var(--color-paper) 45%, transparent);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+@media (max-width: 800px) {
+  .foot-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .foot-grid { grid-template-columns: 1fr; }
+}
+
+/* === Reveals (horizontal-sweep) === */
+.reveal {
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity var(--dur-3) var(--ease-out), transform var(--dur-3) var(--ease-out);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: opacity 150ms linear; }
+}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <a href="#" class="masthead-mark">FIT<em>.</em></a>
+    <div class="masthead-meta">納得導線支援システム — A Vivivi Service</div>
+    <a href="#contact" class="masthead-cta">相談を申し込む</a>
+  </div>
+</header>
+
+<!-- HERO — Manifesto declaration -->
+<section class="hero bleed-ink">
+  <div class="container">
+    <div class="hero-eyebrow reveal">FOR HOUSING COMPANIES ─ 住宅事業者様向け</div>
+    <h1 class="reveal">
+      <span class="struck">建てれば、売れた。</span><br>
+      <span class="accent-block">選ばれる理由</span>のない<br>
+      住宅会社は、もう、<br>
+      生き残れない。
+    </h1>
+    <p class="hero-lead reveal">
+      人口減少、比較市場化、建築費の高騰。省エネ義務化、相続登記、損保大手への業務改善命令。外部環境は、もはや「待てば戻る」フェーズを完全に終えました。この時代の住宅営業に必要なのは、もう「売る力」ではなく、判断を支え、信頼で選ばれる仕組みです。
+    </p>
+    <div class="hero-byline reveal">A Manifesto for Housing Companies · Spring 2026</div>
+  </div>
+</section>
+
+<!-- BELIEF BAND (marquee) -->
+<div class="belief-band">
+  <div class="belief-track" aria-hidden="true">
+    <span>FAIRNESS</span><span class="sep">·</span>
+    <span>公正な判断データ</span><span class="sep">·</span>
+    <span>INSIGHT</span><span class="sep">·</span>
+    <span>深い理解と納得</span><span class="sep">·</span>
+    <span>TRUST</span><span class="sep">·</span>
+    <span>揺るがぬ信頼形成</span><span class="sep">·</span>
+    <span>FAIRNESS</span><span class="sep">·</span>
+    <span>公正な判断データ</span><span class="sep">·</span>
+    <span>INSIGHT</span><span class="sep">·</span>
+    <span>深い理解と納得</span><span class="sep">·</span>
+    <span>TRUST</span><span class="sep">·</span>
+    <span>揺るがぬ信頼形成</span><span class="sep">·</span>
+  </div>
+</div>
+
+<!-- SECTION 01 · THE CRISIS — 4 claims -->
+<section class="section">
+  <div class="container measure-wide">
+    <div class="section-meta reveal">01 ─ The Crisis</div>
+    <h2 class="section-pretitle reveal">気づかぬうちに、<em>静かに削られている。</em></h2>
+    <p class="section-intro reveal">
+      日本の住宅市場で、いま起きている地殻変動。この四つを同時に、自社で抱え込める会社は、もう存在しません。
+    </p>
+
+    <article class="claim-block reveal">
+      <div class="claim-number">01</div>
+      <h3 class="claim-head">「待てば戻る」が、完全に終わった。</h3>
+      <p class="claim-body">
+        新築一択の時代は終焉。中古流通シェアは右肩上がりで、顧客は迷わず「比較」する。御社は、<strong>選択肢の一つに過ぎない</strong>。
+      </p>
+    </article>
+
+    <article class="claim-block reveal">
+      <div class="claim-number">02</div>
+      <h3 class="claim-head">価格で押す営業の、明確な限界。</h3>
+      <p class="claim-body">
+        建築コストは高騰を続け、「予算」は説得の論理を失った。値引きで取りに行けば、<strong>自社の粗利が削れていくだけ</strong>。
+      </p>
+    </article>
+
+    <article class="claim-block reveal">
+      <div class="claim-number">03</div>
+      <h3 class="claim-head">コンプラ強化は、営業の生命線へ。</h3>
+      <p class="claim-body">
+        省エネ義務化、4号特例、補助金実務、個人情報保護法の厳格化、大手損保の業務改善命令。<strong>制度対応は、現場では追えない領域</strong>に。
+      </p>
+    </article>
+
+    <article class="claim-block reveal">
+      <div class="claim-number">04</div>
+      <h3 class="claim-head">無料FPは、もはや「リスクの温床」。</h3>
+      <p class="claim-body">
+        「無料」の裏に潜むのは、利益相反の構造。顧客誘導、情報漏洩、ブランド毀損。<strong>御社の名前で起きるトラブルが、SNSで拡散する</strong>。
+      </p>
+    </article>
+  </div>
+</section>
+
+<!-- FULL BLEED IMAGE 1 -->
+<div class="full-bleed-image">
+  <img src="images/hero_house.jpg" alt="変わる住宅市場の風景" loading="lazy" />
+  <div class="caption">いま、この瞬間にも、市場は静かに反転している</div>
+</div>
+
+<!-- SECTION 02 · TROUBLE PATTERN — 3 claims on bleed -->
+<section class="section bleed-ink">
+  <div class="container measure-wide">
+    <div class="section-meta section-meta-light reveal">02 ─ Trouble Pattern</div>
+    <h2 class="section-pretitle reveal" style="color:var(--color-paper)">後から揉めるパターンには、<em>共通の"型"</em>がある。</h2>
+    <p class="section-intro reveal">
+      成約に至らない案件、契約後にトラブル化する案件。原因は、現場の個人スキルでも、運でもない。仕組みの欠落です。
+    </p>
+
+    <article class="claim-block reveal" style="border-color:color-mix(in srgb, var(--color-paper) 25%, transparent)">
+      <div class="claim-number">STEP 01</div>
+      <h3 class="claim-head">不安が、放置される。</h3>
+      <p class="claim-body">
+        払える額と借りられる額の乖離、当初見積からの膨張、教育・老後資金との未整合、金利選択の理解不足。客観材料のない不安が、静かに溜まる。
+      </p>
+    </article>
+
+    <article class="claim-block reveal" style="border-color:color-mix(in srgb, var(--color-paper) 25%, transparent)">
+      <div class="claim-number">STEP 02</div>
+      <h3 class="claim-head">根拠なき前進が、始まる。</h3>
+      <p class="claim-body">
+        「なんとかなる」「後で削ればいい」。客観材料を欠いたまま、勘と経験で契約を進める。営業の善意が、リスクをむしろ温存させる。
+      </p>
+    </article>
+
+    <article class="claim-block reveal" style="border-color:color-mix(in srgb, var(--color-paper) 25%, transparent)">
+      <div class="claim-number">STEP 03</div>
+      <h3 class="claim-head">本来防げた損失が、噴出する。</h3>
+      <p class="claim-body">
+        過度な値引き圧力、契約白紙化、手付放棄、言った言わないのクレーム、紹介減、評判の毀損。<strong>すべて、初動の不安放置から始まっている</strong>。
+      </p>
+    </article>
+  </div>
+</section>
+
+<!-- FULL BLEED IMAGE 2 -->
+<div class="full-bleed-image">
+  <img src="images/crisis_market.jpg" alt="揺らぐ住宅市場の象徴" loading="lazy" />
+  <div class="caption">「現状維持」は、もはや最大のコストである</div>
+</div>
+
+<!-- FIT mark + Solution overture -->
+<section class="section">
+  <div class="container">
+    <div class="section-meta reveal" style="text-align:center">03 ─ The Answer</div>
+    <h2 class="section-pretitle reveal" style="text-align:center;max-width:none">
+      住宅営業を、<em>「信頼」で再設計する</em>仕組み。
+    </h2>
+  </div>
+  <div class="fit-mark-block">
+    <div class="fit-mark">FIT</div>
+    <div class="fit-tagline">FAIRNESS · INSIGHT · TRUST</div>
+    <div class="fit-jp">納得導線支援システム FIT</div>
+  </div>
+
+  <div class="container measure">
+    <p class="section-intro reveal" style="margin-top:var(--space-2xl);text-align:left">
+      FITは、単なるFP紹介サービスではありません。中立FPの提供、品質監督、コンプライアンス設計、営業現場との連携。これらを一体で整え、住宅事業者様が「信頼で選ばれ続ける」ための運用基盤です。
+    </p>
+  </div>
+
+  <div class="container" style="margin-top:var(--space-xl)">
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="pillar-letter">F</div>
+        <div class="pillar-label">FAIRNESS</div>
+        <h3 class="pillar-head">中立で公正な判断データ</h3>
+        <p class="pillar-body">営業都合でも、保険回収都合でもない。お客様の人生に正対した資金計画を、独自基準のFPが提供します。</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="pillar-letter">I</div>
+        <div class="pillar-label">INSIGHT</div>
+        <h3 class="pillar-head">顧客理解を、営業現場へ還流</h3>
+        <p class="pillar-body">相談で得られた顧客特性、訴求ポイント、無理筋案件の見極めを、SVが整理し営業現場にフィードバック。</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="pillar-letter">T</div>
+        <div class="pillar-label">TRUST</div>
+        <h3 class="pillar-head">"企業負担"が生む圧倒的な信頼</h3>
+        <p class="pillar-body">お客様の費用負担はゼロ。御社が負担する設計が、「判断を支えてくれる会社」という揺るがぬ信頼を形成します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE — Newsprint table feel -->
+<section class="section bleed-paper-2">
+  <div class="container">
+    <div class="section-meta reveal">04 ─ The Difference</div>
+    <h2 class="section-pretitle reveal">なぜ、従来の<em>「無料FPモデル」</em>では足りないのか。</h2>
+    <p class="section-intro reveal">
+      "誰がコストを負担するか"。その一点が、サービスの質も、目的も、結果も、すべてを決定づけます。
+    </p>
+
+    <div class="compare-grid">
+      <div class="compare-col reveal">
+        <div class="compare-tag">A ─ 従来の無料FPモデル</div>
+        <div class="compare-head">"無料"の裏で、誰かが回収している。</div>
+        <ul class="compare-list">
+          <li><span class="mark">×</span><span>FPが負担。後で保険手数料で回収。</span></li>
+          <li><span class="mark">×</span><span>相談の目的は、保険の販売。</span></li>
+          <li><span class="mark">×</span><span>担当FP個人のスキルに依存。</span></li>
+          <li><span class="mark">×</span><span>情報連携、同意取得が曖昧。</span></li>
+          <li><span class="mark">×</span><span>御社のブランド毀損リスクを内包。</span></li>
+        </ul>
+      </div>
+      <div class="compare-col reveal">
+        <div class="compare-tag">B ─ FIT</div>
+        <div class="compare-head">"信頼形成"のための戦略的設計。</div>
+        <ul class="compare-list">
+          <li><span class="mark">◯</span><span>住宅企業が負担、お客様はゼロ。</span></li>
+          <li><span class="mark">◯</span><span>相談の目的は、納得と信頼形成。</span></li>
+          <li><span class="mark">◯</span><span>独自基準FP × SV監査体制。</span></li>
+          <li><span class="mark">◯</span><span>同意、記録、保存まで仕組み化。</span></li>
+          <li><span class="mark">◯</span><span>ライフプランと保険提案を明確分離。</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FULL BLEED IMAGE 3 — consultation -->
+<div class="full-bleed-image">
+  <img src="images/trust_consultation.jpg" alt="信頼に基づく相談の現場" loading="lazy" />
+  <div class="caption">「判断を支える」姿勢こそが、深い信頼を生み出す</div>
+</div>
+
+<!-- OUTCOMES — manifesto list -->
+<section class="section">
+  <div class="container measure-wide">
+    <div class="section-meta reveal">05 ─ What Changes</div>
+    <h2 class="section-pretitle reveal">導入後、現場で<em>起きること。</em></h2>
+    <p class="section-intro reveal">属人化した営業から、「材料と納得で進める」再現性ある営業プロセスへ。</p>
+
+    <div class="statement-list">
+      <article class="statement-item reveal">
+        <div class="statement-num">01</div>
+        <div>
+          <h3 class="statement-head">若手でも、初手から踏み込める。</h3>
+          <p class="statement-body">「費用負担なしの第三者診断」という、強力な切り口。経験の浅い営業でも、資金計画の話を自然に始められる会話のフックが手に入ります。</p>
+        </div>
+      </article>
+      <article class="statement-item reveal">
+        <div class="statement-num">02</div>
+        <div>
+          <h3 class="statement-head">"無理筋案件"を、早期に見極める。</h3>
+          <p class="statement-body">公正な診断データで、現実的なラインを早期に判断。見込み案件へリソースを集中投下でき、現場の疲弊と無駄打ちが構造的に減ります。</p>
+        </div>
+      </article>
+      <article class="statement-item reveal">
+        <div class="statement-num">03</div>
+        <div>
+          <h3 class="statement-head">価格勝負から、価値勝負へ。</h3>
+          <p class="statement-body">「この会社は、判断を支えてくれる」。この一点が、競合との比較検討を終わらせます。価格ではなく、納得でクロージングする状態へ。</p>
+        </div>
+      </article>
+      <article class="statement-item reveal">
+        <div class="statement-num">04</div>
+        <div>
+          <h3 class="statement-head">セカンドオピニオンで、揺るがない。</h3>
+          <p class="statement-body">中立性が担保されているからこそ、他社診断や親族の介入で関係が崩れない。紹介リファラルの基盤も、ここから生まれます。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section class="section bleed-paper-3">
+  <div class="container measure-wide">
+    <div class="section-meta reveal">06 ─ For Whom</div>
+    <h2 class="section-pretitle reveal">一つでも当てはまれば、<em>FITの導入価値があります。</em></h2>
+    <p class="section-intro reveal">逆に言えば、これらをすべて社内で整え切れている住宅事業者は、ほぼ存在しません。</p>
+
+    <div class="check-grid">
+      <div class="check-row reveal"><span class="check-mark">◯</span><p>競合との比較検討で、決め手を失う案件が増えている。</p></div>
+      <div class="check-row reveal"><span class="check-mark">◯</span><p>無料FP紹介を使っているが、内容が見えずに不安がある。</p></div>
+      <div class="check-row reveal"><span class="check-mark">◯</span><p>個人情報の取扱、同意取得のフローが、明文化されていない。</p></div>
+      <div class="check-row reveal"><span class="check-mark">◯</span><p>営業の質が、担当者個人のスキルに大きく依存している。</p></div>
+      <div class="check-row reveal"><span class="check-mark">◯</span><p>若手営業が、資金計画の話を切り出せず止まっている。</p></div>
+      <div class="check-row reveal"><span class="check-mark">◯</span><p>契約直前のキャンセル、他決が、感覚値で増えている。</p></div>
+      <div class="check-row reveal"><span class="check-mark">◯</span><p>「強み」を伝えきれず、結局は価格・仕様勝負になっている。</p></div>
+      <div class="check-row reveal"><span class="check-mark">◯</span><p>省エネ、補助金、コンプラ対応の現場負荷が、限界に近い。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FULL BLEED IMAGE 4 — key handover -->
+<div class="full-bleed-image">
+  <img src="images/cta_warm.jpg" alt="信頼が、次の鍵を渡す" loading="lazy" />
+  <div class="caption">"判断を支える会社"は、最後まで選ばれ続ける</div>
+</div>
+
+<!-- BIG CTA -->
+<section class="cta-manifesto bleed-ink" id="cta">
+  <div class="container">
+    <div class="section-meta section-meta-light reveal">Next Action</div>
+    <h2 class="reveal">"選ばれ続ける会社"の側に、<em>立ち続けるために。</em></h2>
+    <p class="cta-manifesto-body reveal">
+      具体的な導入プラン、料金設計、貴社のROIシミュレーションは、個別の状況をお伺いした上でご提案します。まずは三十分、現状をお聞かせください。<strong>相談、資料請求はすべて無料です。</strong>
+    </p>
+    <div class="reveal">
+      <a href="#contact" class="btn-block">
+        個別相談を申し込む
+        <span class="arrow">→</span>
+      </a>
+      <a href="mailto:contact@vivivi.co.jp" class="btn-link">メールで問い合わせる</a>
+    </div>
+
+    <div class="cta-vvvv">
+      <img src="images/logos/logo_white.png" alt="ビビビビ株式会社" />
+      <span class="by">Provided by ─ ビビビビ株式会社</span>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-wrap" id="contact">
+  <div class="container">
+    <div class="form-card">
+      <div class="form-eyebrow">Contact ─ 導入相談</div>
+      <h3>30分の現状ヒアリングから、はじめましょう。</h3>
+      <p class="sub">担当より、2営業日以内にご連絡いたします。守秘義務遵守。競合企業さまへの情報提供は一切いたしません。</p>
+
+      <form onsubmit="event.preventDefault();alert('お問い合わせありがとうございます。担当よりご連絡いたします。');">
+        <div class="form-row">
+          <label>会社名<span class="req">*</span></label>
+          <input type="text" required placeholder="株式会社〇〇ホーム" />
+        </div>
+        <div class="form-row">
+          <label>ご担当者名<span class="req">*</span></label>
+          <input type="text" required placeholder="山田 太郎" />
+        </div>
+        <div class="form-row">
+          <label>役職</label>
+          <input type="text" placeholder="代表取締役 / 営業部長" />
+        </div>
+        <div class="form-row">
+          <label>メールアドレス<span class="req">*</span></label>
+          <input type="email" required placeholder="name@example.co.jp" />
+        </div>
+        <div class="form-row">
+          <label>電話番号</label>
+          <input type="tel" placeholder="053-000-0000" />
+        </div>
+        <div class="form-row">
+          <label>お問い合わせ種別<span class="req">*</span></label>
+          <select required>
+            <option value="">選択してください</option>
+            <option>サービス資料を希望</option>
+            <option>個別相談を希望</option>
+            <option>導入シミュレーションを希望</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>現状の課題・ご質問（任意）</label>
+          <textarea placeholder="無料FP紹介を利用中だが、コンプラ面で不安がある／若手の営業教育に課題感がある など"></textarea>
+        </div>
+        <button type="submit" class="form-submit">送信する</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER · Ft4 Dense colophon -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="foot-brand">FIT<em>.</em></div>
+        <p>納得導線支援システム — 住宅事業者様向け</p>
+        <img class="foot-vvvv" src="images/logos/logo_white.png" alt="ビビビビ株式会社" />
+      </div>
+      <div class="foot-col">
+        <h4>このページについて</h4>
+        <ul>
+          <li><a href="#cta">相談を申し込む</a></li>
+          <li><a href="#contact">資料請求</a></li>
+          <li><a href="mailto:contact@vivivi.co.jp">メール窓口</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>提供元</h4>
+        <p>ビビビビ株式会社<br>静岡県浜松市<br>contact@vivivi.co.jp</p>
+      </div>
+      <div class="foot-col">
+        <h4>制作</h4>
+        <p>A manifesto for housing companies.<br>Spring 2026 — vol. 01</p>
+      </div>
+    </div>
+    <div class="foot-meta">
+      <span>© ビビビビ株式会社 — Fairness · Insight · Trust</span>
+      <span>FIT vol. 01 / 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Horizontal-sweep reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
