@@ -1178,30 +1178,30 @@ footer {
       <h3>30分の現状ヒアリングから、はじめましょう。</h3>
       <p class="sub">担当より、2営業日以内にご連絡いたします。守秘義務遵守。競合企業さまへの情報提供は一切いたしません。</p>
 
-      <form onsubmit="event.preventDefault();alert('お問い合わせありがとうございます。担当よりご連絡いたします。');">
+      <form id="contact-form" novalidate>
         <div class="form-row">
           <label>会社名<span class="req">*</span></label>
-          <input type="text" required placeholder="株式会社〇〇ホーム" />
+          <input type="text" name="company" required placeholder="株式会社〇〇ホーム" />
         </div>
         <div class="form-row">
           <label>ご担当者名<span class="req">*</span></label>
-          <input type="text" required placeholder="山田 太郎" />
+          <input type="text" name="name" required placeholder="山田 太郎" />
         </div>
         <div class="form-row">
           <label>役職</label>
-          <input type="text" placeholder="代表取締役 / 営業部長" />
+          <input type="text" name="role" placeholder="代表取締役 / 営業部長" />
         </div>
         <div class="form-row">
           <label>メールアドレス<span class="req">*</span></label>
-          <input type="email" required placeholder="name@example.co.jp" />
+          <input type="email" name="email" required placeholder="name@example.co.jp" />
         </div>
         <div class="form-row">
           <label>電話番号</label>
-          <input type="tel" placeholder="053-000-0000" />
+          <input type="tel" name="phone" placeholder="053-000-0000" />
         </div>
         <div class="form-row">
           <label>お問い合わせ種別<span class="req">*</span></label>
-          <select required>
+          <select name="type" required>
             <option value="">選択してください</option>
             <option>サービス資料を希望</option>
             <option>個別相談を希望</option>
@@ -1211,9 +1211,10 @@ footer {
         </div>
         <div class="form-row">
           <label>現状の課題・ご質問（任意）</label>
-          <textarea placeholder="無料FP紹介を利用中だが、コンプラ面で不安がある／若手の営業教育に課題感がある など"></textarea>
+          <textarea name="message" placeholder="無料FP紹介を利用中だが、コンプラ面で不安がある／若手の営業教育に課題感がある など"></textarea>
         </div>
-        <button type="submit" class="form-submit">送信する</button>
+        <button type="submit" class="form-submit" id="form-submit-btn">送信する</button>
+        <p id="form-msg" style="margin-top:var(--space-md);font-family:var(--font-label);font-size:0.85rem;letter-spacing:0.06em;display:none"></p>
       </form>
     </div>
   </div>
@@ -1253,6 +1254,13 @@ footer {
 </footer>
 
 <script>
+  // ============================================================
+  // FIT inquiry endpoint — Google Apps Script Web App URL
+  // 手順: apps-script.gs の指示通り Apps Script をデプロイし、
+  //       取得したウェブアプリURLを以下に貼り付けてください。
+  // ============================================================
+  const WEBAPP_URL = ""; // ← ここに https://script.google.com/macros/s/.../exec を貼る
+
   // Horizontal-sweep reveal
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -1260,6 +1268,53 @@ footer {
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Contact form → Apps Script (Google Sheets)
+  const form = document.getElementById('contact-form');
+  const msg = document.getElementById('form-msg');
+  const btn = document.getElementById('form-submit-btn');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+
+      const data = Object.fromEntries(new FormData(form));
+      data.userAgent = navigator.userAgent;
+
+      if (!WEBAPP_URL) {
+        msg.style.display = 'block';
+        msg.style.color = 'var(--color-accent)';
+        msg.textContent = '※ フォーム送信先が未設定です。担当者にご連絡ください: contact@vivivi.co.jp';
+        return;
+      }
+
+      btn.disabled = true;
+      const orig = btn.textContent;
+      btn.textContent = '送信中…';
+      msg.style.display = 'none';
+
+      try {
+        // text/plain で Content-Type を回避し、preflight を起こさせない
+        await fetch(WEBAPP_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(data)
+        });
+        msg.style.display = 'block';
+        msg.style.color = 'var(--color-ink)';
+        msg.textContent = '✓ 送信完了しました。担当より2営業日以内にご連絡いたします。';
+        form.reset();
+        btn.textContent = '送信しました';
+      } catch (err) {
+        msg.style.display = 'block';
+        msg.style.color = 'var(--color-accent)';
+        msg.textContent = '送信エラーが発生しました。お手数ですが contact@vivivi.co.jp までご連絡ください。';
+        btn.disabled = false;
+        btn.textContent = orig;
+      }
+    });
+  }
 </script>
 
 </body>
